@@ -1,0 +1,7 @@
+<router-outlet></router-outlet>
+<app-date-of-birth datetype="dateOfBirth" [ageLimit]=10 requiredvalid="true" (validation)="isDateValid=$event"
+  (childEvent)="selectedDate=$event" [dobInput]='date' [controlTouched]="isDateTouched"
+  [style]="{'border':'1px solid grey', 'width':'20%', 'display': 'inline-block'}">
+</app-date-of-birth>
+
+<button (click)="submit ()">submit</button>

@@ -1,0 +1,17 @@
+<div>
+    <select [(ngModel)]="selectedYear" [ngStyle]="selectBox()" (change)="changeYear($event)">
+        <option *ngFor="let year of Years" [ngValue]="year">{{year}}</option>
+    </select>
+
+    <select [(ngModel)]="selectedMonth" [ngStyle]="selectBox()" (change)="onMonthChange($event)">
+        <option *ngFor="let month of Months" [ngValue]="month">{{month.monthname}}</option>
+    </select>
+
+    <select [(ngModel)]="selectedDay" [ngStyle]="selectBox()" (change)="onDayChange()">
+        <option *ngFor="let day of Days" [ngValue]="day">{{day}}</option>
+    </select>
+</div>
+
+<p *ngIf="!isDateValid" style="color:red; font-size: 80%;"> *Please select valid date</p>
+<p *ngIf="!isAgeValid && ageLimit > 0" style="color:red; font-size: 80%;"> *You must be above {{ageLimit}} years of age
+</p>
